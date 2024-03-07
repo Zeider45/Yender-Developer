@@ -1,4 +1,10 @@
 import type { Dispatch, SetStateAction } from "react";
+import Books from "../icons/AboutIcons/Books";
+import Code from "../icons/AboutIcons/Code";
+import Emoji from "../icons/AboutIcons/Emoji";
+import Languages from "../icons/AboutIcons/Languages";
+import Person from "../icons/AboutIcons/Person";
+import Work from "../icons/AboutIcons/Work";
 import Close from "../icons/Close";
 import Css from "../icons/tecnologies/Css";
 import Express from "../icons/tecnologies/Express";
@@ -32,7 +38,7 @@ export default function AboutDetailed({
           </span>
         </nav>
         <article className="flex relative flex-wrap flex-col  md:flex-row px-2 sm:px-12 lg:px-24 w-full gap-8">
-          <article className="flex  md:justify-center ">
+          <article className="flex  justify-center ">
             <div className="flex flex-col gap-y-6">
               <img
                 src="/profile-picture.jpg"
@@ -78,9 +84,12 @@ export default function AboutDetailed({
               </div>
             </div>
           </article>
-          <article className="flex-1 flex flex-col gap-y-6 self-stretch md:h-[90vh] md:overflow-auto px-2">
+          <article className="flex-1 flex flex-col gap-y-14  md:h-[90vh] md:overflow-auto px-2">
             <div className="flex flex-col gap-y-4">
-              <h2 className="text-2xl text-[--card-text] font-bold">
+              <h2 className="text-2xl text-[--card-text] font-bold flex items-center gap-2">
+                <span>
+                  <Person style="size-8" />
+                </span>
                 About me
               </h2>
               <p className="text-[--card-semi-text]  text-balance">
@@ -92,7 +101,10 @@ export default function AboutDetailed({
               </p>
             </div>
             <div className="flex flex-col gap-y-6">
-              <h2 className="text-2xl text-[--card-text] font-bold ">
+              <h2 className="text-2xl text-[--card-text] font-bold flex items-center gap-2 ">
+                <span>
+                  <Languages style="size-8" />
+                </span>
                 Languages
               </h2>
               <h3 className="font-semibold">
@@ -112,20 +124,31 @@ export default function AboutDetailed({
             </div>
 
             <div className="flex flex-col gap-y-6">
-              <h2 className="text-2xl text-[--card-text] font-bold">
+              <h2 className="text-2xl text-[--card-text] font-bold flex items-center gap-2">
+                <span>
+                  <Work style="size-8" />
+                </span>
                 Experience
               </h2>
               <ExpirienceTimeline />
             </div>
             <div className="flex flex-col gap-y-6">
-              <h2 className="text-2xl text-[--card-text] font-bold">Studies</h2>
+              <h2 className="text-2xl text-[--card-text] font-bold flex items-center gap-2">
+                <span>
+                  <Books style="size-8" />
+                </span>
+                Studies
+              </h2>
               <StudiesTimeline />
             </div>
             <div className="flex flex-col gap-y-6">
-              <h2 className="text-2xl text-[--card-text] font-bold">
+              <h2 className="text-2xl text-[--card-text] font-bold flex items-center gap-2">
+                <span>
+                  <Code style="size-8" />
+                </span>
                 Tecnologies
               </h2>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 ">
                 <div className="flex items-center gap-x-2 border-[2px] px-5 rounded-full py-[0.1rem] border-green-400 text-green-400 font-normal text-lg text-[--main-text]">
                   <div className="size-2 bg-green-400 rounded-full"></div> Basic
                 </div>
@@ -138,7 +161,7 @@ export default function AboutDetailed({
                   Advanced
                 </div>
               </div>
-              <div className="flex flex-wrap gap-14 py-6">
+              <div className="flex flex-wrap gap-14 py-6 justify-center ">
                 <TecnologyLevel level="Intermidiate">
                   <Html style="size-16" />
                 </TecnologyLevel>
@@ -192,7 +215,10 @@ export default function AboutDetailed({
               </div>
             </div>
             <div>
-              <h2 className="text-2xl text-[--card-text] font-bold">
+              <h2 className="text-2xl text-[--card-text] font-bold flex items-center gap-2">
+                <span>
+                  <Emoji style="size-8" />
+                </span>
                 Personal Skills
               </h2>
               <ul className="text-[--card-semi-text] ">

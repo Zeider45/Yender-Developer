@@ -42,11 +42,13 @@ export default function ProjectDetailed({
           <article className="flex flex-col  justify-center gap-y-4 flex-[1.2] sm:min-w-[500px]">
             <div className="flex gap-4 items-end ml-4">
               <img
-                className="size-24 cover bg-white p-[0.5rem] rounded-lg"
+                className=" size-20 md:size-24 cover bg-white p-[0.5rem] rounded-lg"
                 src={icon}
-                alt=""
+                alt="project logo"
               />
-              <h1 className="font-bold text-[--card-text] text-6xl">{title}</h1>
+              <h1 className="font-bold text-[--card-text] text-4xl md:text-6xl">
+                {title}
+              </h1>
             </div>
             <nav className="flex p-4 items-center gap-x-4">
               {links.length > 0 &&
@@ -78,7 +80,7 @@ export default function ProjectDetailed({
               <h2 className="text-2xl text-[--card-text] font-bold">Learned</h2>
               <p className="text-[--card-semi-text]">{learned}</p>
             </div>
-            <div className="min-h-40">
+            <div className="min-h-20">
               <h2 className="text-2xl text-[--card-text] font-bold">Tools</h2>
               <div className="flex flex-wrap gap-3 py-6">
                 {tecnologies.map((tec, index) => (

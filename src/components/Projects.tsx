@@ -71,7 +71,7 @@ export default function Projects() {
         <Folder style="size-8" />
         Projects created
       </h2>
-      <article className="flex flex-col w-full overflow-auto px-6 gap-y-6 md:gap-y-0 lg:max-h-[600px] snap-y snap-mandatory z-10 ">
+      <article className="flex flex-col w-full md:overflow-auto px-6 gap-y-6 md:gap-y-0 md:max-h-[600px] snap-y snap-mandatory z-10 mb-20 md:mb-0">
         {PROJECTS.map((project: any) => (
           <ProjectItem key={project.id} data={project} />
         ))}
