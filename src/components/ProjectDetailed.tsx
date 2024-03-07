@@ -69,7 +69,7 @@ export default function ProjectDetailed({
             </nav>
             <SwipeCarousel images={images} />
           </article>
-          <article className="flex flex-col h-full   gap-y-6 flex-1 sm:min-w-[500px]">
+          <article className="flex flex-col md:h-full mb-12 md:mb-0   gap-y-6 flex-1 sm:min-w-[500px]">
             <div className="min-h-40">
               <h2 className="text-2xl text-[--card-text] font-bold">
                 Description
