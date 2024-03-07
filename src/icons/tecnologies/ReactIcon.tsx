@@ -1,4 +1,4 @@
-export default function React({ style }: { style: string }) {
+export default function ReactIcon({ style }: { style: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

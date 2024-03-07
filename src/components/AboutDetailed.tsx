@@ -15,7 +15,7 @@ import NextJs from "../icons/tecnologies/NextJs";
 import Nodejs from "../icons/tecnologies/Nodejs";
 import PostgresSQL from "../icons/tecnologies/PostgresSQL";
 import Prisma from "../icons/tecnologies/Prisma";
-import React from "../icons/tecnologies/React";
+import ReactIcon from "../icons/tecnologies/ReactIcon";
 import Redux from "../icons/tecnologies/Redux";
 import SocketIo from "../icons/tecnologies/SocketIo";
 import Tailwind from "../icons/tecnologies/Tailwind";
@@ -29,15 +29,27 @@ export default function AboutDetailed({
 }: {
   setShowAbout: Dispatch<SetStateAction<boolean>>;
 }) {
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const header = document.querySelector(".header");
+
+    if (e.currentTarget.scrollTop > 0) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  };
   return (
-    <div className="appear-modal fixed overflow-auto top-0 left-0  w-screen h-screen transition-all bg-[--modal-bg] backdrop-blur-md z-[100]">
-      <section className="flex  flex-col text-[--card-text] w-full h-full">
-        <nav className="w-full   flex justify-end p-2 px-6 sm:px-12 lg:px-24">
+    <div
+      onScroll={handleScroll}
+      className="appear-modal fixed overflow-auto top-0 left-0  w-screen h-screen transition-all bg-[--modal-bg] backdrop-blur-md z-[100]"
+    >
+      <section className="flex relative flex-col text-[--card-text] w-full h-max main-container">
+        <nav className="w-full sticky top-0  flex justify-end p-2 px-6 sm:px-12 lg:px-24 z-50 transition-all header">
           <span onClick={() => setShowAbout(false)}>
             <Close style="size-11 cursor-pointer hover:scale-[1.3] transition-all" />
           </span>
         </nav>
-        <article className="flex relative flex-wrap flex-col  md:flex-row px-2 sm:px-12 lg:px-24 w-full gap-8">
+        <article className="flex flex-wrap flex-col py-6 md:py-0 md:flex-row px-2 sm:px-12 lg:px-24 w-full gap-8">
           <article className="flex  justify-center ">
             <div className="flex flex-col gap-y-6">
               <img
@@ -84,7 +96,7 @@ export default function AboutDetailed({
               </div>
             </div>
           </article>
-          <article className="flex-1 flex flex-col gap-y-14  md:h-[90vh] md:overflow-auto px-2">
+          <article className="flex-1 flex flex-col h-full gap-y-14 pb-20 md:pb-0 md:h-[90vh] md:overflow-auto px-2">
             <div className="flex flex-col gap-y-4">
               <h2 className="text-2xl text-[--card-text] font-bold flex items-center gap-2">
                 <span>
@@ -181,7 +193,7 @@ export default function AboutDetailed({
                 </TecnologyLevel>
 
                 <TecnologyLevel level="Intermidiate">
-                  <React style="size-16" />
+                  <ReactIcon style="size-16" />
                 </TecnologyLevel>
 
                 <TecnologyLevel level="Intermidiate">

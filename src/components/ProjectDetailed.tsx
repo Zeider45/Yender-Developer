@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react";
+import React, { type Dispatch, type SetStateAction } from "react";
 import SocialPill from "../components/SocialPill";
 import Close from "../icons/Close.tsx";
 import GitHub from "../icons/GitHub.tsx";
@@ -8,7 +8,7 @@ import Express from "../icons/tecnologies/Express.tsx";
 import NextJs from "../icons/tecnologies/NextJs.tsx";
 import Nodejs from "../icons/tecnologies/Nodejs.tsx";
 import Prisma from "../icons/tecnologies/Prisma.tsx";
-import React from "../icons/tecnologies/React.tsx";
+import ReactIcon from "../icons/tecnologies/ReactIcon.tsx";
 import Redux from "../icons/tecnologies/Redux.tsx";
 import SocketIo from "../icons/tecnologies/SocketIo.tsx";
 import Tailwind from "../icons/tecnologies/Tailwind.tsx";
@@ -30,15 +30,29 @@ export default function ProjectDetailed({
   learned,
 }: PropsProjectDetailed) {
   // const reactSwipeEl = useRef<ReactSwipe | null>(null);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const header = document.querySelector(".header");
+
+    if (e.currentTarget.scrollTop > 0) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  };
+
   return (
-    <div className="appear-modal fixed overflow-auto top-0 left-0  w-screen h-screen transition-all bg-[--modal-bg] backdrop-blur-md z-[100]">
-      <section className="flex  flex-col text-[--card-text] w-full h-full">
-        <nav className="w-full   flex justify-end p-2 px-6 sm:px-12 lg:px-24">
+    <div
+      onScroll={handleScroll}
+      className="appear-modal fixed overflow-auto top-0 left-0  w-screen h-screen transition-all bg-[--modal-bg] backdrop-blur-md z-[100]"
+    >
+      <section className="flex relative flex-col text-[--card-text] w-full ">
+        <nav className="w-full sticky top-0  flex justify-end p-2 px-6 sm:px-12 lg:px-24 z-50 transition-all header">
           <span onClick={() => setShowProject(false)}>
             <Close style="size-11 cursor-pointer hover:scale-[1.3] transition-all" />
           </span>
         </nav>
-        <section className="flex  h-full items-center flex-wrap px-2 sm:px-12 lg:px-24 w-full  justify-around gap-8">
+        <section className="flex  h-full items-center flex-wrap px-2 py-6 md:py-0 sm:px-12 lg:px-24 w-full  justify-around gap-8">
           <article className="flex flex-col  justify-center gap-y-4 flex-[1.2] sm:min-w-[500px]">
             <div className="flex gap-4 items-end ml-4">
               <img
@@ -69,7 +83,7 @@ export default function ProjectDetailed({
             </nav>
             <SwipeCarousel images={images} />
           </article>
-          <article className="flex flex-col md:h-full mb-12 md:mb-0   gap-y-6 flex-1 sm:min-w-[500px]">
+          <article className="flex flex-col md:h-full pb-20 md:pb-0 gap-y-6 flex-1 sm:min-w-[500px]">
             <div className="min-h-40">
               <h2 className="text-2xl text-[--card-text] font-bold">
                 Description
@@ -94,7 +108,7 @@ export default function ProjectDetailed({
                     {tec == "express" && <Express style="size-16" />}
                     {tec == "socketio" && <SocketIo style="size-16" />}
                     {tec == "prisma" && <Prisma style="size-16" />}
-                    {tec == "react" && <React style="size-16" />}
+                    {tec == "react" && <ReactIcon style="size-16" />}
                   </div>
                 ))}
               </div>
