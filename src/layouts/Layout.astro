@@ -1,0 +1,119 @@
+---
+import "@fontsource-variable/montserrat";
+import Header from "../components/Header.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="modal"></div>
+    <Header />
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    /* color-scheme: dark light; */
+    --page-bg: #e5d8c5;
+    --modal-bg: #050505d8;
+    --btn-slider-bg: #161616af;
+    --nav-text: rgb(70, 75, 75);
+    --main-text: #1c1f24;
+    --hover-bg: rgba(240, 240, 240, 0.1);
+    --secondary-text: rgb(66, 65, 65);
+    --card-semi-text: #bbb;
+    --card-text: #fff;
+    --main-color: #cb983f;
+    /* --main-color: rgb(228, 146, 114); */
+  }
+
+  html {
+    background-color: var(--page-bg);
+    font-family: "Montserrat Variable", sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    min-height: 100vh;
+  }
+
+  @meida (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  .project-card:hover {
+    z-index: 20;
+    box-shadow: -20px 17px 15px -10px rgba(0, 0, 0, 0.1);
+  }
+  .project-card:hover > .arrow {
+    color: var(--main-color);
+  }
+
+  .about_btn:hover > .arrow {
+    color: var(--main-color);
+  }
+  .appear-modal {
+    animation: appear 300ms;
+  }
+
+  .btn-slider-scale {
+    transition: 200ms;
+  }
+  .btn-slider-scale:hover {
+    transform: scale(1.1);
+  }
+
+  .title_animated {
+    animation: animate_title 0.8s ease-out;
+  }
+
+  @media screen and (min-width: 768px) {
+    .projects-container {
+      transform: perspective(600px) scale(0.9) rotateY(-20deg);
+    }
+    .shadow-3d {
+      text-shadow: 10px 10px 10px #3334;
+    }
+
+    .card {
+      box-shadow: 10px 10px 10px #3333;
+      transform: scale(0.9);
+      transition: all 200ms;
+    }
+
+    .card:hover {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes animate_title {
+    0% {
+      transform: translateY(70px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>

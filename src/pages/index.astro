@@ -1,0 +1,100 @@
+---
+import SocialPill from "../components/SocialPill";
+import GitHub from "../icons/GitHub";
+import LinkedIn from "../icons/LinkedIn";
+import Mail from "../icons/Mail";
+
+import SectionContainer from "../components/SectionContainer.astro";
+import Copy from "../icons/Copy";
+import Layout from "../layouts/Layout.astro";
+import Projects from "../components/Projects";
+import About from "../components/About";
+import { Toaster } from "sonner";
+---
+
+<Layout title="Yender Developer">
+  <script>
+    import { toast } from "sonner";
+
+    const copyText = () => {
+      navigator.clipboard.writeText("yender.yrnc45@gmail.com");
+      toast.success("Email copied");
+    };
+
+    document.getElementById("copy-buton")?.addEventListener("click", copyText);
+  </script>
+  <main
+    class="flex mx-auto max-w-[1560px] h-[90vh] items-center flex-wrap gap-4 px-0 md:px-12 sm:px-24 bg-[--page-bg] z-[10] overflow-auto"
+  >
+    <SectionContainer
+      id="top"
+      class="px-6 gap-y-16 md:gap-y-10 mb-24 md:mb-0 flex-[2]"
+    >
+      <div class="flex flex-wrap items-center justify-center gap-4 w-full">
+        <!-- <div class="w-[200px] shrink-0 h-[200px] overflow-hidden rounded-full">
+          <img
+            src="./photo.webp"
+            class="object-cover object-top h-full w-full"
+            alt="yender photo"
+          />
+        </div> -->
+        <article class="flex flex-col gap-y-8 w-full max-w-[600px]">
+          <div class="flex flex-col gap-y-2">
+            <div class="overflow-hidden">
+              <h1 class="text-[--main-text] text-6xl font-bold title_animated">
+                Hello, I am Yender
+              </h1>
+            </div>
+
+            <div class="overflow-hidden py-2">
+              <h1 class="text-[--main-text] text-6xl font-bold title_animated">
+                Rodriguez
+              </h1>
+            </div>
+
+            <h2 class="text-[--secondary-text] text-2xl font-semibold">
+              Web Developer
+            </h2>
+          </div>
+          <p class="text-[--secondary-text] text-wrap">
+            +2 years of expience Developing in Web Environment, i am from
+            Caracas, Venezuela. Specialized in solving problems and creating
+            efficient applications
+          </p>
+          <About client:load />
+        </article>
+        <nav class="flex gap-4 flex-wrap pt-10">
+          <SocialPill
+            style="black"
+            href="https://www.linkedin.com/in/yender-rodriguez-470b6726b/"
+          >
+            <LinkedIn style="size-6" /> LinkedIn
+          </SocialPill>
+          <SocialPill style="black" href="https://github.com/Yennic0302">
+            <GitHub style="size-6" /> GitHub
+          </SocialPill>
+          <div class="flex items-center gap-2">
+            <SocialPill style="black" href="mailto:yender.yrnc45@gmail.com">
+              <Mail style="size-6" /> yender.yrnc45@gmail.com
+            </SocialPill>
+            <span
+              id="copy-buton"
+              class="cursor-pointer
+                   flex justify-center items-center
+                   p2
+                   hover:scale-110
+                  transition-all
+                  ml-2"
+            >
+              <Copy />
+            </span>
+          </div>
+        </nav>
+      </div>
+    </SectionContainer>
+    <SectionContainer class="w-[500px]">
+      <Projects client:load />
+    </SectionContainer>
+  </main>
+  <Toaster client:load position="bottom-right" theme="dark" />
+</Layout>

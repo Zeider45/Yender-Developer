@@ -1,0 +1,19 @@
+<section
+  id={Astro.props.id}
+  class={` relative mx-auto flex flex-col gap-4 ${Astro.props.class} main-board`}
+>
+  <slot />
+</section>
+<style>
+  .main-board {
+    animation: appear 400ms ease-out;
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

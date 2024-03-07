@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.0.9",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/montserrat": "^5.0.17",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^4.2.4",
+    "framer-motion": "^11.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-swipe": "^6.0.4",
+    "sonner": "^1.4.3",
+    "tailwindcss": "^3.4.1"
+  }
+}

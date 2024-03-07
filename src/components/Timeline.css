@@ -1,0 +1,131 @@
+.timeline {
+  position: relative;
+  max-width: 1300px;
+}
+
+.container {
+  padding: 10px 20px;
+  position: relative;
+  width: 50%;
+}
+
+.text-box {
+  padding: 10px 15px;
+  background: var(--card-text);
+  position: relative;
+  border-radius: 5px;
+  font-size: 15px;
+  color: var(--main-text);
+}
+
+.right-container {
+  left: 50%;
+}
+
+.left-containers {
+  left: 0;
+}
+
+.mark {
+  position: absolute;
+  right: -12px;
+  top: 32px;
+  z-index: 10;
+}
+
+.right-container > .mark {
+  left: -12px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: var(--card-text);
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+}
+
+.grow::after {
+  animation: grow 2s;
+}
+
+.text-box h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.text-box small {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.right-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 22px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid var(--card-text);
+  left: -14px;
+  z-index: 20;
+}
+
+.left-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 22px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid var(--card-text);
+  right: -14px;
+  z-index: 20;
+}
+
+@keyframes grow {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1204px) {
+  .timeline::after {
+    left: 7px;
+  }
+  .right-container {
+    left: 0;
+  }
+  .left-container-arrow {
+    border-right: 15px solid var(--card-text);
+    border-left: 0px;
+    left: -14px;
+  }
+  .mark {
+    right: 0;
+    left: -5px;
+  }
+  .right-container > .mark {
+    left: -5px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 10px 20px;
+  }
+}
