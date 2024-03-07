@@ -72,7 +72,7 @@ export default function AboutDetailed({
                   Experience Years:
                   <span className="font-normal text-[--card-semi-text]">
                     {" "}
-                    2+
+                    +2
                   </span>
                 </h3>
               </div>

@@ -3,6 +3,7 @@ import SocialPill from "../components/SocialPill";
 import Close from "../icons/Close.tsx";
 import GitHub from "../icons/GitHub.tsx";
 import Window from "../icons/Window.tsx";
+import Css from "../icons/tecnologies/Css.tsx";
 import Express from "../icons/tecnologies/Express.tsx";
 import NextJs from "../icons/tecnologies/NextJs.tsx";
 import Nodejs from "../icons/tecnologies/Nodejs.tsx";
@@ -26,6 +27,7 @@ export default function ProjectDetailed({
   description,
   setShowProject,
   tecnologies,
+  learned,
 }: PropsProjectDetailed) {
   // const reactSwipeEl = useRef<ReactSwipe | null>(null);
   return (
@@ -74,7 +76,7 @@ export default function ProjectDetailed({
             </div>
             <div className="min-h-40">
               <h2 className="text-2xl text-[--card-text] font-bold">Learned</h2>
-              <p className="text-[--card-semi-text]">description learned</p>
+              <p className="text-[--card-semi-text]">{learned}</p>
             </div>
             <div className="min-h-40">
               <h2 className="text-2xl text-[--card-text] font-bold">Tools</h2>
@@ -84,6 +86,7 @@ export default function ProjectDetailed({
                     {tec == "nextjs" && <NextJs style="size-16" />}
                     {tec == "typescript" && <Typescript style="size-16" />}
                     {tec == "redux" && <Redux style="size-16" />}
+                    {tec == "css" && <Css style="size-16" />}
                     {tec == "tailwind" && <Tailwind style="size-16" />}
                     {tec == "nodejs" && <Nodejs style="size-16" />}
                     {tec == "express" && <Express style="size-16" />}

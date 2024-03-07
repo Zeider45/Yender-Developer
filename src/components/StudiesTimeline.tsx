@@ -19,7 +19,7 @@ export default function StudiesTimeline() {
         <RevealCard styleType="left">
           <div className="text-box">
             <h2>Web Developing</h2>
-            <small>2021 - present</small>
+            <small>2022 - present</small>
             <p>
               I started to learn web developing and programming fundaments by my
               own, using plataforms like YouTube Where i watched many good
