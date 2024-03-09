@@ -1,6 +1,6 @@
 const styles = {
   black:
-    "bg-[--main-text] text-white hover:scale-110 hover:bg-[--secondary-text]",
+    "bg-[--main-text] text-white hover:scale-[1.07]  hover:bg-[--secondary-text]",
   main: "bg-[--card-text]  text-[--main-text] hover:text-[--card-text] hover:scale-110 hover:bg-[--secondary-text]",
 };
 

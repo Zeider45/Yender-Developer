@@ -14,12 +14,12 @@ export default function About() {
         )}
       <button
         onClick={() => setShowAbout(true)}
-        className="px-4 py-2 text-lg rounded-lg text-[--card-text] w-max bg-[--main-text] hover:scale-110 hover:bg-[--secondary-text] transition-all about_btn"
+        className=" flex items-center gap-2 px-4 py-2 text-lg rounded-lg text-[--card-text] w-max bg-[--main-text] hover:scale-110 hover:bg-[--secondary-text] transition-all about_btn"
       >
         <h3>See more about me</h3>
-        <nav className=" flex w-full justify-end arrow transition-all ">
+        <span className=" arrow  transition-all">
           <Arrow />
-        </nav>
+        </span>
       </button>
     </>
   );

@@ -107,7 +107,7 @@ export default function AboutDetailed({
               <p className="text-[--card-semi-text]  text-balance">
                 Interesed in figure out how to solve problems of an efficient
                 way, focused in little details and in a good performance in my
-                work, my expirience helped me out analizing the problems from
+                work, my expirience helps me out analizing the problems from
                 many points of view and provide different solutions using the
                 tools that are within my reach.
               </p>
@@ -246,8 +246,8 @@ export default function AboutDetailed({
                   <span className="text-[--card-text] text-6xl">.</span> Polite
                 </li>
                 <li className="text-lg">
-                  <span className="text-[--card-text] text-6xl">.</span> Fast
-                  learner
+                  <span className="text-[--card-text] text-6xl">.</span> Good
+                  listener
                 </li>
                 <li className="text-lg">
                   <span className="text-[--card-text] text-6xl">.</span>{" "}
